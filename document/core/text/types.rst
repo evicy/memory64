@@ -113,6 +113,19 @@ Multiple anonymous parameters or results may be combined into a single declarati
      (\text{(}~~\text{result}~~\Tvaltype~~\text{)})^\ast \\
    \end{array}
 
+.. index:: index type
+   pair: text format; index type
+.. _text-idxtype:
+
+Index Type
+~~~~~~~~~~
+
+.. math::
+   \begin{array}{llclll}
+   \production{index type} & \Tidxtype &::=&
+     \text{i32} &\Rightarrow& \I32 \\ &&|&
+     \text{i64} &\Rightarrow& \I64 \\
+   \end{array}
 
 .. index:: limits
    pair: text format; limits
@@ -139,7 +152,8 @@ Memory Types
 .. math::
    \begin{array}{llclll@{\qquad\qquad}l}
    \production{memory type} & \Tmemtype &::=&
-     \X{lim}{:}\Tlimits &\Rightarrow& \X{lim} \\
+     \X{lim}{:}\Tlimits &\Rightarrow& \I32~\X{lim} \\ &&|&
+     \X{it}{:}\Tidxtype~~\X{lim}{:}\Tlimits &\Rightarrow& \X{it}~\X{lim} \\
    \end{array}
 
 
@@ -153,7 +167,8 @@ Table Types
 .. math::
    \begin{array}{llclll}
    \production{table type} & \Ttabletype &::=&
-     \X{lim}{:}\Tlimits~~\X{et}{:}\Treftype &\Rightarrow& \X{lim}~\X{et} \\
+     \X{lim}{:}\Tlimits~~\X{et}{:}\Treftype &\Rightarrow& \I32~\X{lim}~\X{et} \\ &&|&
+     \X{it}{:}\Tidxtype~~\X{lim}{:}\Tlimits~~\X{et}{:}\Treftype &\Rightarrow& \X{it}~\X{lim}~\X{et}
    \end{array}
 
 

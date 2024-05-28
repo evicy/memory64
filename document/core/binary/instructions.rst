@@ -196,7 +196,7 @@ Each variant of :ref:`memory instruction <syntax-instr-memory>` is encoded with 
 .. math::
    \begin{array}{llclll}
    \production{memory argument} & \Bmemarg &::=&
-     a{:}\Bu32~~o{:}\Bu32 &\Rightarrow& \{ \ALIGN~a,~\OFFSET~o \} \\
+     a{:}\Bu32~~o{:}\Bu64 &\Rightarrow& \{ \ALIGN~a,~\OFFSET~o \} \\
    \production{instruction} & \Binstr &::=& \dots \\ &&|&
      \hex{28}~~m{:}\Bmemarg &\Rightarrow& \I32.\LOAD~m \\ &&|&
      \hex{29}~~m{:}\Bmemarg &\Rightarrow& \I64.\LOAD~m \\ &&|&

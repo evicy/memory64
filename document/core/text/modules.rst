@@ -361,7 +361,7 @@ A :ref:`data segment <text-data>` can be given inline with a memory definition, 
 .. math::
    \begin{array}{llclll}
    \production{module field} &
-     \text{(}~\text{memory}~~\Tid^?~~\text{(}~\text{data}~~b^n{:}\Tdatastring~\text{)}~~\text{)} \quad\equiv \\ & \qquad
+     \text{(}~\text{memory}~~\Tid^?~~\Tidxtype^?~~\text{(}~\text{data}~~b^n{:}\Tdatastring~\text{)}~~\text{)} \quad\equiv \\ & \qquad
        \text{(}~\text{memory}~~\Tid'~~m~~m~\text{)} \\ & \qquad
        \text{(}~\text{data}~~\text{(}~\text{memory}~~\Tid'~\text{)}~~\text{(}~\text{i32.const}~~\text{0}~\text{)}~~\Tdatastring~\text{)}
        \\ & \qquad\qquad
