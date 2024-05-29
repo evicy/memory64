@@ -124,15 +124,15 @@ Function Types
 Limits
 ~~~~~~
 
-:ref:`Limits <syntax-limits>` are encoded with a preceding flag indicating whether a maximum is present.
+:ref:`Limits <syntax-limits>` are encoded with a preceding flag indicating whether a maximum is present, and the corresponsing index type.
 
 .. math::
    \begin{array}{llclll}
    \production{limits} & \Blimits &::=&
-     \hex{00}~~n{:}\Bu32 &\Rightarrow& \{ \LMIN~n, \LMAX~\epsilon \} \\ &&|&
-     \hex{01}~~n{:}\Bu32~~m{:}\Bu32 &\Rightarrow& \{ \LMIN~n, \LMAX~m \} \\ &&|&
-     \hex{04}~~n{:}\Bu64 &\Rightarrow& \{ \LMIN~n, \LMAX~\epsilon \} \\ &&|&
-     \hex{05}~~n{:}\Bu64~~m{:}\Bu64 &\Rightarrow& \{ \LMIN~n, \LMAX~m \}
+     \hex{00}~~n{:}\Bu64 &\Rightarrow& \I32~~\{ \LMIN~n, \LMAX~\epsilon \} \\ &&|&
+     \hex{01}~~n{:}\Bu64~~m{:}\Bu64 &\Rightarrow& \I32~~\{ \LMIN~n, \LMAX~m \} \\ &&|&
+     \hex{04}~~n{:}\Bu64 &\Rightarrow& \I64~~\{ \LMIN~n, \LMAX~\epsilon \} \\ &&|&
+     \hex{05}~~n{:}\Bu64~~m{:}\Bu64 &\Rightarrow& \I64~~\{ \LMIN~n, \LMAX~m \}
    \end{array}
 
 

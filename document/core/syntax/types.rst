@@ -161,6 +161,9 @@ They are also used to classify the inputs and outputs of :ref:`instructions <syn
 Index Type
 ~~~~~~~~~~
 
+Index types classify the type of the values that can be used to index into
+:ref:`memories <syntax-mem>` and :ref:`tables <syntax-table>`.
+
 .. math::
    \begin{array}{llll}
    \production{index type} & \idxtype &::=&
@@ -181,8 +184,8 @@ Limits
 
 .. math::
    \begin{array}{llll}
-   \production{limits} & \limits(iv) &::=&
-     \{ \LMIN~\X{iv}, \LMAX~\X{iv}^? \} \\
+   \production{limits} & \limits &::=&
+     \{ \LMIN~\u64, \LMAX~\u64^? \} \\
    \end{array}
 
 If no maximum is given, the respective storage can grow to any size.
@@ -202,15 +205,7 @@ Memory Types
 .. math::
    \begin{array}{llll}
    \production{memory type} & \memtype &::=&
-     ~\idxtype~\limits(type(\X{iv})) \\
-   \end{array}
-
-where
-
-.. math::
-   \begin{array}{lclllllcl}
-   type(\i32) &=& \I32 \\
-   type(\i64) &=& \I64
+     ~\idxtype~\limits \\
    \end{array}
 
 The limits constrain the minimum and optionally the maximum size of a memory.
@@ -231,15 +226,7 @@ Table Types
 .. math::
    \begin{array}{llll}
    \production{table type} & \tabletype &::=&
-     ~\idxtype~\limits(type(\X{iv})) ~\reftype \\
-   \end{array}
-
-where
-
-.. math::
-   \begin{array}{lclllllcl}
-   type(\i32) &=& \I32 \\
-   type(\i64) &=& \I64
+     ~\idxtype~\limits ~\reftype \\
    \end{array}
 
 Like memories, tables are constrained by limits for their minimum and optionally maximum size.
