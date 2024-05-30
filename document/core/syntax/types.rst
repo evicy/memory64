@@ -156,12 +156,16 @@ They are also used to classify the inputs and outputs of :ref:`instructions <syn
    \end{array}
 
 
+.. _index:: ! index type
+   pair: abstract syntax; index type
+   single: memory; index type
+   single: table; index type
 .. _syntax-idxtype:
 
 Index Type
 ~~~~~~~~~~
 
-Index types classify the type of the values that can be used to index into
+*Index types* classify the values that can be used to index into
 :ref:`memories <syntax-mem>` and :ref:`tables <syntax-table>`.
 
 .. math::

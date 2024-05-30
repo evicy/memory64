@@ -1186,15 +1186,15 @@ Memory Instructions
 
 * The memory :math:`C.\CMEMS[0]` must be defined in the context.
 
-* Let :math:`it~\limits` be the :ref:`memory type <syntax-memtype>` :math:`C.\CMEMS[0]`.
+* Let :math:`\X{it}~\limits` be the :ref:`memory type <syntax-memtype>` :math:`C.\CMEMS[0]`.
 
 * Then the instruction is valid with type :math:`[it~it~it] \to []`.
 
 .. math::
    \frac{
-     C.\CMEMS[0] = it~\limits
+     C.\CMEMS[0] = \X{it}~\limits
    }{
-     C \vdashinstr \MEMORYCOPY : [it~it~it] \to []
+     C \vdashinstr \MEMORYCOPY : [\X{it}~\X{it}~\X{it}] \to []
    }
 
 
